@@ -5,6 +5,6 @@ Bundler.require
 
 require_relative "./lyrify_cli/cli"
 require_relative "./lyrify_cli/api"
-require_relative "./lyrify_cli/lyrics"
+require_relative "./lyrify_cli/artists"
 
 #require_all ''

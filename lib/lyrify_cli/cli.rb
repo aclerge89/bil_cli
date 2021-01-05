@@ -19,6 +19,8 @@ def artists_list
     ["Eminem ", "Big Sean", "Drake", "Ariana Grande"].each.with_index(1) do |artist, i| 
         puts "#{i}. #{artist}"
     end
+
+    artist_selection
 end
 
 def goodbye
@@ -28,6 +30,15 @@ end
 def invalid
     puts "Hmm, that doesnt seem valid, try again?"
     menu
+end
+
+def artist_selection
+    puts "select a artist for song lyrics"
+
+    selection = user_input
+   # Artists.find_artist(selection)
+   puts "#{selection}"
+
 end
 
 def menu 
