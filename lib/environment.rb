@@ -1,4 +1,4 @@
-require "lyrify_cli/version"
+require_relative "lyrify_cli/version"
 
 require 'bundler'
 Bundler.require

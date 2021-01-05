@@ -6,7 +6,7 @@ class Lyrics
  attr_accessor :artist, :titile 
 
  def initialize(artist, titile)
-    @name = artist
+    @artist = artist
     @title = titile 
     save 
  end
@@ -14,6 +14,7 @@ class Lyrics
  def save 
     @@all << self
  end
+ 
  def self.all
     @@all
  end

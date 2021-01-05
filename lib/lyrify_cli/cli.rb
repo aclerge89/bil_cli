@@ -4,6 +4,7 @@ class CLI
         puts "let's start with the name of the artist "
         greet(user_input)
     end
+
     def user_input
         gets.strip
     end
@@ -23,4 +24,6 @@ def menu
     else
         puts "invalid"
     end
+end
+
 end
