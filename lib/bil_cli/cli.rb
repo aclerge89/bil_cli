@@ -1,10 +1,10 @@
 class CLI
 
+    
     def start
         puts "Welcome To Ball Is Life, Where you can learn about your favorite NBA teams."
         puts "Let's start with your name:"
         API.get_data
-        binding.pry
         greet(user_input)
     end
 
@@ -19,15 +19,15 @@ class CLI
 end
 
 def teams_list
-    Team.all.each.with_index(1) do |team, i| 
+    Teams.all.each.with_index(1) do |team, i| 
         puts "#{i}. #{team.name}"
     end
 
-    team_selection
+    team_name
 end
 
 def goodbye
-    puts "Hope you enjoy learning about your favorite teams! Have a great Day! "
+    puts "Hope you enjoyed learning about your favorite teams! Have a great Day! "
 end
 
 def invalid
@@ -40,20 +40,25 @@ def team_selection
 
     selection = user_input
     puts "#{selection}"
-   team = Team.find_team(selection) 
+   team = Teams.find_team(selection) 
    team_details(team)
 end
 
-
-def team_details(team)
-    puts "Name: #{team.name}"
-    puts "Conference: #{team.conference}"
-    puts "City: #{team.city}"
-    menu
+def team_name
+    name = Teams.all.each{|team| team.name}
 end
+
+
+# def team_details(team)
+#     puts "Name: #{team.name}"
+#     puts "Conference: #{team.conference}"
+#     puts "City: #{team.city}"
+#     menu
+# end
 
 def menu 
     selection = user_input
+   # puts "Please be patient. "
 
     if selection == 'y'
         teams_list
