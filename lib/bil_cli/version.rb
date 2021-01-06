@@ -1,3 +1,3 @@
-module LyrifyCli
+module BilCli
   VERSION = "0.1.0"
 end
