@@ -1,5 +1,5 @@
 
-class teams
+class Teams
 
     @@all = []
 
