@@ -64,7 +64,7 @@ class CLI
         selection = user_input
         selection = selection.to_i-1
         selected_team = Teams.all[selection]
-        binding.pry
+        #binding.pry
         #selection.to_i-1
     end
 
