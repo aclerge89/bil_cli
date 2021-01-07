@@ -52,28 +52,30 @@ class CLI
 
         if selection == 'y'
             teams_list
+            team_selected
         elsif selection == 'exit'
             goodbye
         else
             invalid
         end
-        team_selected
     end
 
     def team_selected
         selection = user_input
         selection = selection.to_i-1
         selected_team = Teams.all[selection]
-        binding.pry
+        team_details(selected_team)
+        #binding.pry
         #selection.to_i-1
     end
 
 end
 
 
-# def team_details(team)
-#     puts "Name: #{team.name}"
-#     puts "Conference: #{team.conference}"
-#     puts "City: #{team.city}"
-#     menu
-# end
+def team_details(team)
+    puts "Name: #{team.name}"
+    puts "Conference: #{team.conference}"
+    puts "City: #{team.city}"
+    puts "Would you like to see another team details? enter y for list or exit if your done" 
+    menu
+end
