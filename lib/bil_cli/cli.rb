@@ -76,6 +76,6 @@ def team_details(team)
     puts "Name: #{team.name}"
     puts "Conference: #{team.conference}"
     puts "City: #{team.city}"
-    puts "Would you like to see another team details? enter y for list or exit if your done" 
+    puts "Would you like to see another team's details? enter y for list or exit if your done" 
     menu
 end
