@@ -13,7 +13,7 @@ class CLI
 
     def greet(name)
         puts "Great #{name}, which team would you like to learn about?"
-        puts "Input 'y' to see the list, exit' to leave"
+        puts "Input 'y' to see the list, or 'exit' to leave"
         menu
     end
 
@@ -25,11 +25,13 @@ class CLI
     end
 
     def goodbye
-        puts "Hope you enjoyed learning about your favorite teams! Have a great Day! "
+        puts "Hope you enjoyed learning about your favorite teams! Have a great day and remeber BALL IS LIFE!! "
+        exit
     end
 
     def invalid
         puts "Hmm, that doesnt seem valid, try again?"
+        menu
     end
 
     def menu 
@@ -41,8 +43,7 @@ class CLI
             team_selected
         elsif selection == 'exit'
             goodbye
-        else
-            invalid
+        else invalid
             menu
         end
     end
@@ -68,6 +69,6 @@ def team_details(team)
     puts "Name: #{team.name}"
     puts "Conference: #{team.conference}"
     puts "City: #{team.city}"
-    puts "Would you like to see another team's details? enter y for list or exit if your done" 
+    puts "Would you like to see another team's details? enter 'y' for list or 'exit' if your done" 
     menu
 end
