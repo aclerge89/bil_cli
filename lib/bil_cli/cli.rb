@@ -36,7 +36,7 @@ class CLI
 
     def menu 
         selection = user_input
-        # puts "Please be patient. "
+         #puts "Please be patient. "
 
         if selection == 'y'
             teams_list
@@ -49,8 +49,8 @@ class CLI
     end
 
     def team_selected
+        puts 'Enter a number'
         selection = user_input.to_i - 1
-
         selected_team = Teams.all[selection]
         if selected_team
             team_details(selected_team)
