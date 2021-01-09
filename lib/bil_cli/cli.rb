@@ -21,7 +21,7 @@ class CLI
         Teams.all.each.with_index(1) do |team, i| 
         puts "#{i}. #{team.name}"
         end
-        team_name
+        team_selected
     end
 
     def goodbye
@@ -30,20 +30,6 @@ class CLI
 
     def invalid
         puts "Hmm, that doesnt seem valid, try again?"
-        menu
-    end
-
-    def team_selection
-        puts "select a team for more details"
-
-        selection = user_input
-        puts "#{selection}"
-        team = Teams.find_team(selection) 
-        team_details(team)
-    end
-
-    def team_name
-        name = Teams.all.each{|team| team.name}
     end
 
     def menu 
@@ -57,14 +43,20 @@ class CLI
             goodbye
         else
             invalid
+            menu
         end
     end
 
     def team_selected
-        selection = user_input
-        selection = selection.to_i-1
+        selection = user_input.to_i - 1
+
         selected_team = Teams.all[selection]
-        team_details(selected_team)
+        if selected_team
+            team_details(selected_team)
+        else 
+            invalid
+            team_selected
+        end 
         #binding.pry
         #selection.to_i-1
     end
